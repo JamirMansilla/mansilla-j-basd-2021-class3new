@@ -1,0 +1,153 @@
+body{
+    position: static;
+    display: block;
+    background-color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    font-size: 1em;
+    padding: 0px 20px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-bottom: gray thin solid;
+}
+#daBurger{
+    margin-top: 12px;
+    margin-right: 30px;
+}
+.logoLAT{
+    display: block;
+    width:auto;
+    height: auto;
+    margin-top: 10px;
+}
+.loginIcon{
+    display: block;
+    width:auto;
+    height: auto;
+    margin-top: 5px;
+}
+.searchIcon{
+    display: block;
+    width:auto;
+    height: auto;
+    margin-top: 13px;
+}
+.dailyTime{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background-color:#fff;
+    font-family: arial, helvetica;
+    border-top: gray thin solid;
+    border-bottom: gray thin solid;
+}
+.date{
+    margin: 10px 0px;
+    font-size: 10px;
+}
+.temperature{
+    margin: 10px 0px;
+    font-size: 10px;
+}
+.navBar{
+    background-color: grey;
+}
+main{
+    padding: 20px;
+    background-color: #fff;
+}
+article{
+    background-color: #fff;
+    
+}
+article .imageHeat1{
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+.mainArticle h1{
+    font-size: 25px;
+    font-weight: 900;
+    color: #000;
+    text-align: left;
+    line-height: 1.5; 
+    }
+
+.mainArticle .h2{
+    font-size: 25px;
+    font-weight: 900;
+    color: #000;
+    text-align: left;
+   margin-bottom: 10px; 
+}
+.mainArticle{
+    font-size: 15px;
+    color: lightslategrey;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.bottomBar li{
+    background-color: #fff;
+    height: 50px;
+    padding: 20px;
+    border-top: lightgray thin solid;
+   
+}
+.bottomBar a{
+    color: #000;
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bottomBar{
+    display:flex;
+  
+}
+footer{
+    background-color: black;
+    height:50vh;
+    color: blanchedalmond;
+    display: none;
+}
+/* all the hidden elements below 720px*/
+
+@media screen and (max-width: 719px) {
+    #sectionBurger{
+        display: none;
+    }
+    header ul{
+        display: none;
+    }
+    .navBar{
+        display: none;
+    }
+    article .imageHeat2 {
+        display: none;
+    }
+    article .imageHeat3{
+        display: none;
+    }
+    #hiddenNew{
+        display: none;
+    }
+    .asideBar{
+        display: none;
+    }
+    .subHeader{
+        display: none;
+    }
+}

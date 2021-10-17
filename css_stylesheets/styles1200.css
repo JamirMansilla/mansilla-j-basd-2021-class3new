@@ -1,0 +1,153 @@
+@media only screen and (min-width: 1200px) {
+    /* sheet with the final changes at >1200px*/
+    article .imageHeat1 {
+        display: none;
+    }
+    article .imageHeat2{
+        display: none;
+    }
+    .logoLAT{
+        display: none;
+    }
+
+header{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+header ul{
+    display: flex;
+    margin-right: 300px;
+    width: 100%;
+    margin-top: 4px;   
+}
+header li{
+    margin: 15px 5px;
+  
+}
+header li a{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 5px;
+    padding: 3px, 5px;
+    text-decoration: none;
+    text-transform: capitalize; 
+    color: gray;
+    font-weight: bold;
+    width: max-content;
+}
+#sectionBurger{
+    margin-top: 3px;
+}
+.loginIcon{
+    margin-top: 3px;
+}
+.searchIcon{
+    display: block;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+.subHeader{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+
+body{
+    width: 100%;
+}
+main{
+    width: 70%;
+    margin: auto;
+}
+.dailyTime{
+    border-top: none;
+}
+.asideBar {
+    display: inline-block;
+  
+}
+.asideBar a{
+    list-style: none;
+    text-decoration: none;
+    color: #000
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article{
+    width: 70%;
+    margin: 0;
+    padding: 3px;
+}
+article .imageHeat3{
+    display: block;
+    width: 70%;
+    height: 70%;
+    float: right;
+}
+article .mainArticle{
+    flex: 0 1 80%;
+    order: 1;
+    padding: 0 20px 0 0;
+    font-size: 10px;
+    text-align: left;
+}
+.mainArticle h1{
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 5px;
+}
+.mainArticle .h2{
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 5px;
+}
+.bottomBar{
+    order: 3;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+    line-height: 1;
+    width: 70%;
+}
+.asideBar{
+    order: 2;
+    align-self: flex-start;
+    padding: 3px;
+    height: auto;
+    width: 25%;
+    padding: 3px;
+    margin-top: 3px;
+}
+.asideBar ul{
+    padding: 5px;
+}
+.asideBar li{
+    line-height: 1.5;
+    color: #000;
+    margin-bottom: 10px;
+}
+.asideImg1 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+}
+
+
+
+
+
+
