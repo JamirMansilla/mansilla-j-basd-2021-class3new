@@ -57,6 +57,15 @@ header{
     margin: 10px 0px;
     font-size: 10px;
 }
+.link{
+    font-size:25px;
+    color: red;
+    text-transform: uppercase;
+}
+.link a{
+    text-decoration: none;
+    color: rgb(34, 22, 22);
+}
 .temperature{
     margin: 10px 0px;
     font-size: 10px;
