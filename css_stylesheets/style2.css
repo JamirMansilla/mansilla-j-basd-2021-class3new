@@ -100,9 +100,93 @@ button{
     text-transform: uppercase;
     border-radius: 10px;
 }
-/*@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     form{
         width:80%;
     }
     
-}*/
+}
+
+@media only screen and (min-width: 720px){
+
+    article{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        text-align: center;
+        font-weight: 700;
+        color: rgb(71, 69, 69);
+        text-transform: uppercase;
+        font-size: 45px;
+        margin: 2px 20px;
+    
+    }
+    form{
+        box-sizing: border-box;
+        width: 90%;
+        margin-bottom: 30px;
+        padding: 40px 0;
+        box-shadow: 0 0 6px 0 rgba(150, 150, 150, 0.8);
+        border-radius: 5px;
+    }
+    .form{
+        width: 100%;
+        margin: auto;
+    }
+    form .flexContainer{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    form .group{
+        position: relative;
+        margin: 45px;
+    }
+    input{
+        box-sizing: border-box;
+        background: none;
+        color: #000;
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        width: 80%;
+        border:none;
+        border-bottom: 1px solid rgb(102, 101, 101);
+    }
+/* styles */
+
+    input:focus{
+        outline:none;
+        color: rgb(82, 80, 80);
+    }
+    
+    label{
+        color: rgb(82, 80, 80);
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        pointer-events: none;
+    }
+    .bar{
+        position: relative;
+        display: block;
+        width: 80%;
+    }
+
+
+    .message{
+        max-width: 50%;
+        height: 50px;
+        margin:3px;
+        padding: 5px;
+        color: red;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: left;
+        line-height: 1.5;
+    }
+}
