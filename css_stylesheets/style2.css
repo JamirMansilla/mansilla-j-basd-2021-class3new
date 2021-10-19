@@ -82,7 +82,10 @@ input:focus~.bar::before{
 .message{
     margin:auto;
     color: red;
-    font-size: 14px;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
 }
 
 button{
