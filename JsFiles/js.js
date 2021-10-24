@@ -1,3 +1,4 @@
+
 /*Get all the element by their Id*/
 
 var form = document.getElementById("form")
@@ -11,7 +12,8 @@ var address = document.getElementById("address");
 var city = document.getElementById("city");
 var postalCode = document.getElementById("postalCode");
 var id = document.getElementById("id");
-var button = document.getElementById("button")
+var button = document.getElementById("button");
+
 
 /////////////////////////////////////////////////////
 /* all the message's id  */
@@ -27,6 +29,31 @@ var message7 = document.getElementById("message7")
 var message8 = document.getElementById("message8")
 var message9 = document.getElementById("message9")
 var message10 = document.getElementById("message10")
+
+// MODAL
+
+var modal = document.getElementById("modal");
+var closeModal = document.getElementById("exitModal");
+var modalMsg = document.getElementById("modalMsg")
+var modalTitle = document.getElementById("modalTitle")
+
+/*button.addEventListener("click", openmodal);
+
+function openmodal (e){
+    e.preventDefault();
+    modal.style.display = "block";
+}*/
+closeModal.addEventListener("click", closeFModal)
+
+function closeFModal (e){
+    e.preventDefault();
+    modal.style.display = "none"
+}
+window.onclick = function(outside){
+    if (outside.target == modal){
+        modal.style.display = "none"
+    }
+}
 
 
 
@@ -279,19 +306,88 @@ function idFocus(e){
     e.preventDefault();
     message10.innerHTML = "";
 }
+// local storage
 
+var lStorage = function () {
+    localStorage.setItem('name', names.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('password', password.value);
+    localStorage.setItem('confirm password', confirmPass.value);
+    localStorage.setItem('age', age.value);
+    localStorage.setItem('phone number', phone.value);
+    localStorage.setItem('address', address.value);
+    localStorage.setItem('city', city.value);
+    localStorage.setItem('postal code', postalCode.value);
+    localStorage.setItem('id number', id.value);
+}
 
 // Button events
 
 button.addEventListener("click", clickEvent)
 
 function clickEvent(e){
-    if(arrayButton.includes("fill")){
-        alert (errorButton.join(" "));
+    e.preventDefault();
+    var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+names.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPass.value+'&age='+age.value+'&phoneNumber='+phone.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
+    if(arrayButton.length == 0){
+        modal.style.display = "block";
+        modalTitle.innerHTML = "Wait";
+        modalMsg.innerHTML = "Please complete the form before!";
+    }else if(arrayButton.includes("fill")){
+        modal.style.display = "block";
+        var fillMsgs = '<ul class = "modalList">';
+        for (i = 0; i < errorButton.length; i++){
+            if(errorButton[i] !== null && errorButton[i] !== undefined){
+                fillMsgs += '<li>' + errorButton[i] + '</li>';
+            }
+        }
+        fillMsgs += '</ul>';
+        modalTitle.innerHTML = "Error"
+        modalMsg.innerHTML = fillMsgs;
     }else{
-        alert (arrayButton.join(" "))
-    }
+        fetch(url)
+            .then(function(res){
+                if(res.status === 200){
+                    return res.json();
+                }else{
+                    throw res.status;
+                }
+            })
+            .then(function(e){
+                modal.style.display = "block";
+                modalTitle.innerHTML = "Congratulations! here is your info: ";
+                var modalInfo = '<ul class = "modalList">';
+                for(i = 0; i < arrayButton.length; i++){
+                    modalInfo += '<li>' + arrayButton[i] + '</li>';
+                }
+                modalInfo += '</ul>';
+                modalMsg.innerHTML = modalInfo;
+                lStorage();
+
+            })
+            .catch(function(err){
+                modal.style.display = "block";
+                modalMsg.innerHTML = "Error: "+ err;
+            })
+    } 
 }
+
+//////////////////////////////
+/* Check the local storage*/
+function checkLS () {
+    names.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
+    email.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
+    password.value = !!localStorage.getItem('password') ? localStorage.getItem('password') : null;
+    confirmPass.value = !!localStorage.getItem('confirm password') ? localStorage.getItem('confirm password') : null;
+    age.value = !!localStorage.getItem('age') ? localStorage.getItem('age') : null;
+    phone.value = !!localStorage.getItem('phone number') ? localStorage.getItem('phone number') : null;
+    address.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
+    city.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
+    postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
+    id.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
+};
+window.onload = checkLS();
+
+
 
 //////////////////
 /* BONUS */
