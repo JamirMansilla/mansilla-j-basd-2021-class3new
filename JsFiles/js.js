@@ -16,7 +16,8 @@ var button = document.getElementById("button");
 
 
 /////////////////////////////////////////////////////
-/* all the message's id  */
+
+/* all the popups message's id  */
 
 var message = document.getElementsByClassName("message")
 var message1 = document.getElementById("message1")
@@ -30,21 +31,16 @@ var message8 = document.getElementById("message8")
 var message9 = document.getElementById("message9")
 var message10 = document.getElementById("message10")
 
-// MODAL
+// The MODAL
 
 var modal = document.getElementById("modal");
 var closeModal = document.getElementById("exitModal");
 var modalMsg = document.getElementById("modalMsg")
 var modalTitle = document.getElementById("modalTitle")
 
-/*button.addEventListener("click", openmodal);
+// closing the MODAL
 
-function openmodal (e){
-    e.preventDefault();
-    modal.style.display = "block";
-}*/
 closeModal.addEventListener("click", closeFModal)
-
 function closeFModal (e){
     e.preventDefault();
     modal.style.display = "none"
@@ -55,13 +51,11 @@ window.onclick = function(outside){
     }
 }
 
-
-
 // General validations
 
 /* function only text in text boxes
-        (to make it work just add: onkeypress = "return onlyText(event)", in the html "input" element.)
-        */
+    (to make it work just add: onkeypress = "return onlyText(event)", in the html "input" element.)
+*/
 function onlyText (e){
     key = e.keyCode || e.which;
     keyBoard = String.fromCharCode(key).toLowerCase();
@@ -78,17 +72,26 @@ function onlyText (e){
         return false;
     }
 }
-/* arrray for validate the button*/ 
+
+
+/* arrray for validate the button*/
+
 var arrayButton = [];
 var errorButton = [];
 
-
-// start with the validations!
+// lets start with the validations!
 
 // Full name validation
 
-names.addEventListener("blur", namesBlur);
+
 names.addEventListener("focus", namesFocus);
+
+function namesFocus (e){
+    e.preventDefault();
+    message1.innerHTML = "";
+}
+
+names.addEventListener("blur", namesBlur);
 
 function namesBlur (e) {
     e.preventDefault();
@@ -102,15 +105,18 @@ function namesBlur (e) {
 }
 }
 
-function namesFocus (e){
-    e.preventDefault();
-    message1.innerHTML = "";
-}
+
 
 // E-mail validation
 
-email.addEventListener("blur", emailBlur)
 email.addEventListener("focus", emailFocus)
+
+function emailFocus (e){
+    e.preventDefault();
+    message2.innerHTML = "";
+}
+
+email.addEventListener("blur", emailBlur)
 
 function emailBlur(e){
     e.preventDefault();
@@ -125,15 +131,17 @@ function emailBlur(e){
 }
 }
 
-function emailFocus (e){
-    e.preventDefault();
-    message2.innerHTML = "";
-}
 
 // Password Validation
 
+password.addEventListener("focus", passFocus);    
+
+function passFocus(e){
+    e.preventDefault();
+    message3.innerHTML = "";
+}
+
 password.addEventListener("blur", passBlur);
-password.addEventListener("focus", passFocus);
 
 function passBlur(e){
     e.preventDefault();
@@ -147,17 +155,17 @@ function passBlur(e){
     }else{
         arrayButton [2] = "PassWord: "+ password.value + "\n";
 }
-    
 }
-function passFocus(e){
-    e.preventDefault();
-    message3.innerHTML = "";
-}
-
 // confirm password validation
 
-confirmPass.addEventListener("blur", confirmBlur);
 confirmPass.addEventListener("focus", confirmFocus);
+
+function confirmFocus(e){
+    e.preventDefault();
+    message4.innerHTML = "";
+}
+
+confirmPass.addEventListener("blur", confirmBlur);
 
 function confirmBlur(e){
     e.preventDefault();
@@ -171,16 +179,17 @@ function confirmBlur(e){
 }
 }
 
-function confirmFocus(e){
-    e.preventDefault();
-    message4.innerHTML = "";
-}
-
 
 //confirm age validation
 
-age.addEventListener("blur", ageBlur);
 age.addEventListener("focus", ageFocus);
+
+function ageFocus(e){
+    e.preventDefault();
+    message5.innerHTML = "";
+}
+
+age.addEventListener("blur", ageBlur);
 
 function ageBlur(e){
     e.preventDefault();
@@ -194,15 +203,16 @@ function ageBlur(e){
 arrayButton [4] = "Age: "+ age.value + "\n"
 }
 }
-function ageFocus(e){
-    e.preventDefault();
-    message5.innerHTML = "";
-}
 
 // phone validation
 
-phone.addEventListener("blur", phoneBlur);
 phone.addEventListener("focus", phoneFocus);
+function phoneFocus(e){
+    e.preventDefault();
+    message6.innerHTML = "";
+}
+
+phone.addEventListener("blur", phoneBlur);
 
 function phoneBlur(e){
     e.preventDefault();
@@ -216,20 +226,21 @@ function phoneBlur(e){
 arrayButton [5] = "Phone Number: "+ phone.value + "\n"
 }
 }
-function phoneFocus(e){
-    e.preventDefault();
-    message6.innerHTML = "";
-}
 
 // address validation
 
-address.addEventListener("blur", addressBlur);
 address.addEventListener("focus", addressFocus);
+function addressFocus (e){
+    e.preventDefault()
+    message7.innerHTML = ""
+}
+
+address.addEventListener("blur", addressBlur);
 
 function addressBlur(e){
     e.preventDefault();
     var addr = address.value;
-    var aRE = /^[a-z0-9" "]{5,18}$/;
+    var aRE = /^[a-zA-Z0-9" "]{5,18}$/;
 
     if(!aRE.test(addr) || !addr.includes(" ")){
     message7.innerHTML = " The address must have 5 characters long including letters & numbers and a space between";
@@ -238,15 +249,16 @@ function addressBlur(e){
 }else{
 arrayButton [6] = "Address: "+ address.value + "\n"
 }}
-function addressFocus (e){
-    e.preventDefault()
-    message7.innerHTML = ""
-}
 
 // City validation
 
-city.addEventListener("blur", cityBlur);
 city.addEventListener("focus", cityFocus);
+function cityFocus(e){
+    e.preventDefault();
+    message8.innerHTML = "";
+}
+
+city.addEventListener("blur", cityBlur);
 
 function cityBlur(e){
     e.preventDefault();
@@ -259,15 +271,16 @@ function cityBlur(e){
 arrayButton [7] = "City: "+ city.value + "\n"
 }
 }
-function cityFocus(e){
-    e.preventDefault();
-    message8.innerHTML = "";
-}
 
 // Post code Validation
 
-postalCode.addEventListener("blur", postalCodeBlur);
 postalCode.addEventListener("focus", postalCodeFocus);
+function postalCodeFocus(e){
+    e.preventDefault();
+    message9.innerHTML = "";
+}
+
+postalCode.addEventListener("blur", postalCodeBlur);
 
 function postalCodeBlur(e){
     e.preventDefault();
@@ -280,15 +293,16 @@ function postalCodeBlur(e){
 arrayButton [8] = "Postal Code: "+ postalCode.value + "\n"
 }
 }
-function postalCodeFocus(e){
-    e.preventDefault();
-    message9.innerHTML = "";
-}
 
 // ID validation
 
-id.addEventListener("blur", idBlur);
 id.addEventListener("focus", idFocus);
+function idFocus(e){
+    e.preventDefault();
+    message10.innerHTML = "";
+}
+
+id.addEventListener("blur", idBlur);
 
 function idBlur(e){
     e.preventDefault();
@@ -300,13 +314,9 @@ function idBlur(e){
 }else{
 arrayButton [9] = "ID Number: "+ id.value + "\n"
 }
+}
 
-}
-function idFocus(e){
-    e.preventDefault();
-    message10.innerHTML = "";
-}
-// local storage
+// setting the local storage function
 
 var lStorage = function () {
     localStorage.setItem('name', names.value);
@@ -321,12 +331,22 @@ var lStorage = function () {
     localStorage.setItem('id number', id.value);
 }
 
-// Button events
+// Button events validation and submit
 
 button.addEventListener("click", clickEvent)
 
 function clickEvent(e){
     e.preventDefault();
+    namesBlur(e);
+    emailBlur(e);
+    passBlur(e);
+    confirmBlur(e);
+    ageBlur(e);
+    phoneBlur(e);
+    addressBlur(e);
+    cityBlur(e);
+    postalCodeBlur(e);
+    idBlur(e);
     var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+names.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPass.value+'&age='+age.value+'&phoneNumber='+phone.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
     if(arrayButton.length == 0){
         modal.style.display = "block";
@@ -349,7 +369,7 @@ function clickEvent(e){
                 if(res.status === 200){
                     return res.json();
                 }else{
-                    throw res.status;
+                    throw Error(res.status);
                 }
             })
             .then(function(e){
@@ -372,7 +392,7 @@ function clickEvent(e){
 }
 
 //////////////////////////////
-/* Check the local storage*/
+/* Checking the local storage for info*/
 function checkLS () {
     names.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
     email.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
@@ -387,7 +407,3 @@ function checkLS () {
 };
 window.onload = checkLS();
 
-
-
-//////////////////
-/* BONUS */

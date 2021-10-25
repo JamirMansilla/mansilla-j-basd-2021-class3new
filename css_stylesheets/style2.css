@@ -125,6 +125,7 @@ button{
     background-color: rgba(0,0,0,0.4);    
 }
 .modalContent {
+    box-sizing: border-box;
     background-color: #757575;
     margin: 15% auto;
     padding: 20px;
@@ -132,12 +133,14 @@ button{
     width: 60%;
 }
 .modalMsg{
+    box-sizing: border-box;
     color: antiquewhite;
     text-align: left;
     font-size: 20px;
     padding: 2px 16px;
 }
 .modalTitle{
+    box-sizing: border-box;
     padding: 2px 16px;
     color: antiquewhite;
     text-align: center;
@@ -145,6 +148,7 @@ button{
     text-transform: capitalize;
 }
 .modalShow{
+    box-sizing: border-box;
     padding: 2px 16px;
     text-align: left;
 }
