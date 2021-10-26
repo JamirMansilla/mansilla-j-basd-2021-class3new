@@ -82,6 +82,7 @@ form .flexContainer{
 
 }
 form .group{
+    max-width: 50%;
     position: relative;
     margin: 45px;
 }
@@ -117,7 +118,7 @@ label{
 }
 
 .message{
-    max-width: 50%;
+
     height: 50px;
     margin:3px;
     padding: 5px;

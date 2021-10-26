@@ -101,7 +101,8 @@ function namesBlur (e) {
         arrayButton [0] = "fill";
         errorButton[0] = "The name must be longer than 6 characters & have at least one space between name and surname"
     }else{
-    arrayButton [0] = "Full Name: "+ names.value + "\n"
+    arrayButton [0] = "Full Name: "+ names.value + "\n";
+    errorButton[0] = "";
 }
 }
 
@@ -128,6 +129,7 @@ function emailBlur(e){
         errorButton[1] = "invalid E-mail format";
     }else{
     arrayButton [1] = "E-Mail: "+ email.value + "\n"
+    errorButton[1] = "";
 }
 }
 
@@ -154,7 +156,8 @@ function passBlur(e){
         errorButton[2] = "The password only accepts letters or numbers and also must have a lenght of 8 characters ";
     }else{
         arrayButton [2] = "PassWord: "+ password.value + "\n";
-}
+        errorButton[2] = "";
+    }
 }
 // confirm password validation
 
@@ -176,6 +179,7 @@ function confirmBlur(e){
         errorButton[3] = "The Passwords don't match";
 }else{
     arrayButton [3] = "Confirm PassWord: "+ confirmPass.value + "\n"
+    errorButton[3] = "";
 }
 }
 
@@ -201,6 +205,7 @@ function ageBlur(e){
         errorButton[4] = "The number must be integer and greater or equal than 18";
 }else{
 arrayButton [4] = "Age: "+ age.value + "\n"
+errorButton[4] = "";
 }
 }
 
@@ -224,6 +229,7 @@ function phoneBlur(e){
         errorButton[5] = "The number must be at least of 7 digits '()-_,' not allowed";
 }else{
 arrayButton [5] = "Phone Number: "+ phone.value + "\n"
+errorButton[5] = "";
 }
 }
 
@@ -248,6 +254,7 @@ function addressBlur(e){
     errorButton[6] = " The address must have 5 characters long including letters & numbers and a space between";
 }else{
 arrayButton [6] = "Address: "+ address.value + "\n"
+errorButton[6] = "";
 }}
 
 // City validation
@@ -269,6 +276,7 @@ function cityBlur(e){
     errorButton[7] = "The city must be 3 characters long at least";
 }else{
 arrayButton [7] = "City: "+ city.value + "\n"
+errorButton[7] = "";
 }
 }
 
@@ -291,6 +299,7 @@ function postalCodeBlur(e){
         errorButton[8] = "The Postal Code must be 3 numbers long at least";
 }else{
 arrayButton [8] = "Postal Code: "+ postalCode.value + "\n"
+errorButton[8] = "";
 }
 }
 
@@ -313,6 +322,7 @@ function idBlur(e){
         errorButton[9] = "The ID must be 7 numbers long at least but less than 8";
 }else{
 arrayButton [9] = "ID Number: "+ id.value + "\n"
+errorButton[9] = "";
 }
 }
 

@@ -196,11 +196,17 @@ button{
     }
     form .flexContainer{
         display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: start;
+        max-width: 50%;
     }
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    };
     form .group{
+        width: 100%;
         position: relative;
         margin: 45px;
     }
@@ -216,7 +222,7 @@ button{
     }
 /* styles */
 
-    input:focus{
+    input:focus {
         outline:none;
         color: rgb(82, 80, 80);
     }
@@ -237,7 +243,7 @@ button{
 
 
     .message{
-        max-width: 100%;
+  
         height: 50px;
         margin:3px;
         padding: 5px;
